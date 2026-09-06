@@ -94,6 +94,7 @@ public class CreateOrderTest {
         Response response = OrderSteps.createOrder(accessToken, List.of("invalidhash123"));
 
         response.then()
-                .statusCode(500);
+                .statusCode(500)
+                .body(containsString("Internal Server Error"));
     }
 }
